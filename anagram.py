@@ -1,5 +1,12 @@
-userWord1 = input("Type a word ")
-userWord2 = input("Type another word ")
+def LoadDict():
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  letterDict = {}
+  for letter in alphabet:
+    letterDict.update({letter: 0})
+  return letterDict
+
+userWord1 = input("Type a word: ")
+userWord2 = input("Type another word: ")
 print("\nYour words are", userWord1, "and", userWord2, "\n")
 
 word1 = userWord1.lower().replace(" ", "")
@@ -23,13 +30,6 @@ for num in allCounts:
     areAnagrams = False
 
 if areAnagrams:
-  print(userWord1, "and", userWord2, "are anagrams")
+  print(userWord1, "and", userWord2, "are anagrams\n")
 else:
-  print(userWord1, "and", userWord2, "are not anagrams")
-  
-def LoadDict():
-  alphabet = "abcdefghijklmnopqrstuvwxyz"
-  letterDict = {}
-  for letter in alphabet:
-    letterDict.update({letter: 0})
-  return letterDict
+  print(userWord1, "and", userWord2, "are not anagrams\n")
